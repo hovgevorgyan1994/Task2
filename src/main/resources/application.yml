@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    username: postgres
+    password: root
+    url: jdbc:postgresql://localhost:5432/task2?currentSchema=task2
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        show_sql: false
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+
+  flyway:
+    locations:
+      - classpath:db/migration
+
+server:
+  servlet:
+    context-path: /api/v1
+
+addresses:
+  directory: src/main/resources/addresses
